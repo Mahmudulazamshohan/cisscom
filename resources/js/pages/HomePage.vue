@@ -21,7 +21,8 @@
         </el-row>
         <data-table :items="products" :loading="loading" @item-rerender="itemRerender"/>
         <el-dialog title="Add Products" :visible.sync="visible">
-            <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="120px" class="demo-ruleForm">
+            <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="120px"
+                     class="demo-ruleForm">
                 <el-form-item label="Manufacturer" prop="manufacturer">
                     <el-input type="text" v-model="ruleForm.manufacturer" autocomplete="off"></el-input>
                 </el-form-item>
@@ -70,20 +71,20 @@
                     manufacturer: '',
                     model: '',
                     year: '',
-                    country:''
+                    country: ''
                 },
                 rules: {
                     manufacturer: [
-                        { required: true, message: 'Please input manufacturer', trigger: 'blur' },
+                        {required: true, message: 'Please input manufacturer', trigger: 'blur'},
                     ],
                     model: [
-                        { required: true, message: 'Please input model', trigger: 'blur' },
+                        {required: true, message: 'Please input model', trigger: 'blur'},
                     ],
                     year: [
-                        { required: true, message: 'Please input year', trigger: 'blur' },
-                    ] ,
+                        {required: true, message: 'Please input year', trigger: 'blur'},
+                    ],
                     country: [
-                        { required: true, message: 'Please input country', trigger: 'blur' },
+                        {required: true, message: 'Please input country', trigger: 'blur'},
                     ]
                 }
 
@@ -109,10 +110,10 @@
                     })
                 this.$refs.file_uploader.value = ''
             },
-            fetchProducts() {
+            async fetchProducts() {
                 axios.get('api/products')
                     .then(({data}) => {
-                        var data = data.data
+                        var data = await data.data
                         this.products = data.products
                         this.loading = false
                         var labels = data.product_counts.map(product_count => {
@@ -153,13 +154,13 @@
                 //alert(row.id)
                 this.fetchProducts()
             },
-            submitForm(formName){
+            submitForm(formName) {
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        axios.post('api/products',this.ruleForm)
-                            .then((res)=>{
-                              //  console.log(res)
-                                this.visible =false
+                        axios.post('api/products', this.ruleForm)
+                            .then((res) => {
+                                //  console.log(res)
+                                this.visible = false
                                 this.fetchProducts()
                                 this.$refs[formName].resetFields();
                             })

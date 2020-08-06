@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ffe5a0dc-8abd-482a-aa54-ff74a5ae355e" name="Default Changelist" comment="" />
+    <list default="true" id="ffe5a0dc-8abd-482a-aa54-ff74a5ae355e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/HomePage.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +26,9 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -134,6 +143,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -167,7 +177,8 @@
       <workItem from="1596612264703" duration="4192000" />
       <workItem from="1596635656755" duration="6597000" />
       <workItem from="1596642621616" duration="7677000" />
-      <workItem from="1596688740479" duration="4589000" />
+      <workItem from="1596688740479" duration="5360000" />
+      <workItem from="1596723790421" duration="1410000" />
     </task>
     <servers />
   </component>

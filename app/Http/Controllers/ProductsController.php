@@ -17,11 +17,11 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Products::orderBy('id','desc')->get();
+        $products = Products::orderBy('id', 'desc')->get();
         $product_counts = Products::groupBy('manufacturer')
             ->selectRaw('count(*) as total,manufacturer')
             ->get();
-        return new ProductsResource(['products' => $products,'product_counts'=>$product_counts]);
+        return new ProductsResource(['products' => $products, 'product_counts' => $product_counts]);
     }
 
     /**
@@ -44,23 +44,50 @@ class ProductsController extends Controller
     {
         if ($request->hasFile('csv_file')) {
             $csvFile = $request->file('csv_file');
-            $csv = array_map('str_getcsv',file($csvFile->getRealPath()));
-
+            //Load CSV Files From Request Path
+            $csv = array_map('str_getcsv', file($csvFile->getRealPath()));
+            //Check Keys exists
+            $requiredKeys = ['manufacturer', 'model', 'year', 'country'];
+            $keys = $csv[0];
+            $isAllFieldExisted = false;
+            foreach ($requiredKeys as $requiredKey) {
+                if (in_array($requiredKey, $keys)) {
+                    $isAllFieldExisted = true;
+                } else {
+                    $isAllFieldExisted = false;
+                }
+            }
+            //Remove Title Index
             unset($csv[0]);
-            return $csv;
-           // return file_get_contents($csvFile->getRealPath());
+            $products = collect();
+            if ($isAllFieldExisted) {
+                //Filter CSV to array
+                foreach ($csv as $c) {
+                    $data = [];
+                    $length = count($c);
+                    if ($length >= 4) {
+                        for ($i = 0; $i < $length; $i++) {
+                            $data[$requiredKeys[$i]] = $c[$i];
+                        }
+                        $products->push(Products::create($data));
+                    }
+                }
+            }
+
+            return Response::json($products);
+
         } else {
-            $products  = new Products();
-            if($request->manufacturer){
+            $products = new Products();
+            if ($request->manufacturer) {
                 $products->manufacturer = $request->manufacturer;
             }
-            if($request->model){
+            if ($request->model) {
                 $products->model = $request->model;
             }
-            if($request->year){
+            if ($request->year) {
                 $products->year = $request->year;
             }
-            if($request->country){
+            if ($request->country) {
                 $products->country = $request->country;
             }
             $products->save();
@@ -100,16 +127,16 @@ class ProductsController extends Controller
     public function update(Request $request)
     {
         $products = Products::find($request->id);
-        if($request->manufacturer){
+        if ($request->manufacturer) {
             $products->manufacturer = $request->manufacturer;
         }
-        if($request->model){
+        if ($request->model) {
             $products->model = $request->model;
         }
-        if($request->year){
+        if ($request->year) {
             $products->year = $request->year;
         }
-        if($request->country){
+        if ($request->country) {
             $products->country = $request->country;
         }
         $products->save();
@@ -124,14 +151,14 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        $products = Products::where('id',$id)->delete();
+        $products = Products::where('id', $id)->delete();
         if ($products) {
             return Response::json([
                 'status' => 200,
                 'message' => 'Deleted successfully done'
             ]);
-        }else{
-            return Response::json([],401);
+        } else {
+            return Response::json([], 401);
         }
 
     }

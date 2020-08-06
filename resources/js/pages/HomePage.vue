@@ -106,14 +106,20 @@
                 formData.append('csv_file', file)
                 axios.post('api/products', formData)
                     .then(res => {
-                        console.log(res)
-                    })
+                        this.fetchProducts()
+                        this.$message({
+                            message: 'Csv product import successfully done',
+                            type: 'success'
+                        })
+                    }).catch(err=>{
+                    this.$message.error('Failed to upload file, please check your format of csv ')
+                })
                 this.$refs.file_uploader.value = ''
             },
-            async fetchProducts() {
+            fetchProducts() {
                 axios.get('api/products')
-                    .then(({data}) => {
-                        var data = await data.data
+                    .then( ({data}) => {
+                        var data = data.data
                         this.products = data.products
                         this.loading = false
                         var labels = data.product_counts.map(product_count => {
@@ -163,7 +169,13 @@
                                 this.visible = false
                                 this.fetchProducts()
                                 this.$refs[formName].resetFields();
-                            })
+                                this.$message({
+                                    message: 'Product add successfully done',
+                                    type: 'success'
+                                })
+                            }).catch(err=>{
+                            this.$message.error('Failed to add product ')
+                        })
                     } else {
                         console.log('error submit!!');
                         return false;

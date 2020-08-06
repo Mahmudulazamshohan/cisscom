@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffe5a0dc-8abd-482a-aa54-ff74a5ae355e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/preview/screenshot_1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/DataTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/DataTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/pages/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/HomePage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -145,7 +149,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/preview" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
@@ -178,7 +182,8 @@
       <workItem from="1596635656755" duration="6597000" />
       <workItem from="1596642621616" duration="7677000" />
       <workItem from="1596688740479" duration="5360000" />
-      <workItem from="1596723790421" duration="1410000" />
+      <workItem from="1596723790421" duration="4233000" />
+      <workItem from="1596728906384" duration="2142000" />
     </task>
     <servers />
   </component>
@@ -186,10 +191,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="350" y="54" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596637107051">
+    <state x="350" y="54" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596726156974">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="350" y="54" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1596637107051" />
+    <state x="350" y="54" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1596726156974" />
     <state x="404" y="63" key="FileChooserDialogImpl" timestamp="1596441002414">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

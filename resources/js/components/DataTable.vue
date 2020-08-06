@@ -98,7 +98,7 @@
                     :page-sizes="[5, 10, 20, 30]"
                     :page-size="itemsPerPage"
                     layout="total, sizes, prev, pager, next, jumper"
-                    :total="2">
+                    :page-count="totalPages">
                 </el-pagination>
             </div>
         </div>
@@ -140,6 +140,10 @@
                 axios.put(`api/products/${row.id}`,row)
                     .then(res => {
                         this.$emit('item-rerender', row)
+                        this.$message({
+                            message: 'Product update successfully done',
+                            type: 'success'
+                        })
                     })
             },
             deleteAction(row) {
@@ -148,6 +152,10 @@
                 axios.delete(`api/products/${row.id}`)
                     .then(res => {
                         this.$emit('item-rerender', row)
+                        this.$message({
+                            message: 'Product delete successfully done',
+                            type: 'success'
+                        })
                     })
 
             },
@@ -160,12 +168,18 @@
                 if(this.currentPage >= this.itemsPerPage){
                     this.currentPage = this.totalPages;
                 }
-                this.totalPages = (this.items.length % this.itemsPerPage) + 1
+                var searchResults = [];
+
+
                 // console.log(this.items.length % this.itemsPerPage)
                 var index = this.currentPage * this.itemsPerPage - this.itemsPerPage
-                var searchResults = this.items.filter(item => {
-                    return item.model.toLowerCase().includes(this.search.toLowerCase()) || item.manufacturer.toLowerCase().includes(this.search.toLowerCase())
+                searchResults = this.items.filter(item => {
+                    return item.model.toLowerCase().includes(this.search.toLowerCase())
+                        || item.manufacturer.toLowerCase().includes(this.search.toLowerCase())
+                        || item.year.toLowerCase().includes(this.search.toLowerCase())
+                        || item.country.toLowerCase().includes(this.search.toLowerCase())
                 })
+                this.totalPages = Math.floor(searchResults.length / this.itemsPerPage)
                 return searchResults.slice(index, index + this.itemsPerPage)
             }
         }

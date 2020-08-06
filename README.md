@@ -5,37 +5,37 @@
 [Xampp download ](https://www.apachefriends.org/download.html)
 
 [Composer download](https://getcomposer.org/download/)
-####after installation done.....
+#### after installation done.....
 ```composer install```
 
 [Node Installer ](https://nodejs.org/en/download/)
 ####after installation done.....
 ```npm install```
 
-####after all installation done.....
+#### after all installation done.....
 #### got to .env file
-#####Enter your host
+##### Enter your host
 DB_HOST=127.0.0.1
-#####Enter your Port
+##### Enter your Port
 DB_PORT=3306
-#####Enter Database name
+##### Enter Database name
 DB_DATABASE=cisscom
-#####Enter username and password
+##### Enter username and password
 DB_USERNAME=root
 
 DB_PASSWORD= 
 
-###After Database setup done...
+### After Database setup done...
 ```php artisan migrate```
 
-###Start Server localhost 
+### Start Server localhost 
 ```php artisan serve```
 
 ### For production server
 
-#####change domain name ./public path
+##### change domain name ./public path
 
-####Nginx Config
+#### Nginx Config
 ```
 server {
        listen 80;

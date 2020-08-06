@@ -1,0 +1,31 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+@font-face{
+    font-family:element-icons;
+    src:url('/public/fonts/vendor/element-ui/lib/theme-chalk/element-icons.woff?535877f50039c0cb49a6196a5b7517cd') format("woff"),url('/public/fonts/vendor/element-ui/lib/theme-chalk/element-icons.ttf?732389ded34cb9c52dd88271f1345af9') format("truetype");
+    font-weight:400;
+    font-display:auto;
+    font-style:normal
+}
+@import '~element-ui/lib/theme-chalk/index.css';
+// Bootstrap
+.pagination-right-align{
+    margin-top: 20px;
+    display:flex !important;
+    justify-content:flex-end;
+
+}.search-right-align{
+    margin-top: 20px;
+    display:flex !important;
+    justify-content:flex-end;
+    .input-box{
+        width:20%;
+        display:grid;
+        grid-template-columns:auto auto;
+        grid-gap:5px;
+    }
+
+}

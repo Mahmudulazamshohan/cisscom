@@ -1,5 +1,11 @@
 ### Project Assignment 
 - [Install](#install)
 - [Demo](#demo)
-![alt text](https://raw.githubusercontent.com/Mahmudulazamshohan/vux-datepicker/master/screenshots/datepicker1.PNG "Image")
+## Install
+[Xampp download ](https://www.apachefriends.org/download.html)
+
+```composer install```
+```npm install```
+## Demo
+![alt text](https://raw.githubusercontent.com/Mahmudulazamshohan/cisscom/master/preview/screenshot_1.png "Image")
 

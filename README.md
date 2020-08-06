@@ -5,11 +5,13 @@
 [Xampp download ](https://www.apachefriends.org/download.html)
 
 [Composer download](https://getcomposer.org/download/)
+
 #### after installation done.....
 ```composer install```
 
 [Node Installer ](https://nodejs.org/en/download/)
-####after installation done.....
+
+#### after installation done.....
 ```npm install```
 
 #### after all installation done.....

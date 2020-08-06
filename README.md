@@ -24,12 +24,17 @@ DB_DATABASE=cisscom
 DB_USERNAME=root
 
 DB_PASSWORD= 
+
 ###After Database setup done...
 ```php artisan migrate```
+
 ###Start Server localhost 
 ```php artisan serve```
+
 ### For production server
+
 #####change domain name ./public path
+
 ####Nginx Config
 ```
 server {
